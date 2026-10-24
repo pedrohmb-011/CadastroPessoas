@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace CadastroPessoas
 {
-    internal class Funcionario
+    public class Funcionario : Pessoas
     {
+        public decimal Salario;
+
+        public decimal CalcularBonus()
+        {
+            return Salario * 0.10m;
+        }
+        public void ExibirDadosFuncionario()
+        {
+            Console.WriteLine("Salario: " + Salario);
+            Console.WriteLine("Bonus: " + CalcularBonus());
+            Apresentar();
+        }
+        public Funcionario(string nome, int idade, decimal salario)
+            :base(nome, idade)
+        {
+            Salario = salario;
+        }
     }
 }
