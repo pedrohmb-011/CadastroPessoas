@@ -14,14 +14,23 @@ namespace CadastroPessoas
         {
             return Salario * 0.10m;
         }
+
         public void ExibirDadosFuncionario()
         {
-            Console.WriteLine("Salario: " + Salario);
-            Console.WriteLine("Bonus: " + CalcularBonus());
             Apresentar();
         }
+
+        public override void Apresentar()
+        {
+            Console.WriteLine("Tipo: Funcionário");
+            Console.WriteLine("Nome: " + GetNome());
+            Console.WriteLine("Idade: " + Idade);
+            Console.WriteLine("Salário: " + Salario);
+            Console.WriteLine("Bônus: " + CalcularBonus());
+        }
+
         public Funcionario(string nome, int idade, decimal salario)
-            :base(nome, idade)
+            : base(nome, idade)
         {
             Salario = salario;
         }
